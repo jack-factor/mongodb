@@ -74,7 +74,7 @@
             </aside>
             
             <aside class="page_number">
-              1/3
+              1/7
             </aside>
           </footer>
         </div>
@@ -85,8 +85,14 @@
         <div class="slide slide-2">
           <div class="inner">
             
-            <header><h1>Primera Presentacion</h1></header>
+            <header><h1>NoSQl</h1></header>
             
+            
+            <section><ul>
+<li>Difieren del modelo relacional del Sistema de Gestion de  base de datos clasico.</li>
+<li>No usan SQL como principal lenguaje de consulta.</li>
+<li>Escalabilidad Horizontal.</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -102,7 +108,7 @@
             </aside>
             
             <aside class="page_number">
-              2/3
+              2/7
             </aside>
           </footer>
         </div>
@@ -113,8 +119,15 @@
         <div class="slide slide-3">
           <div class="inner">
             
-            <header><h1>Segunda Presentación</h1></header>
+            <header><h1>MongoDB</h1></header>
             
+            
+            <section><ul>
+<li>Sistema de base de datos NoSQL orientado a documentos.</li>
+<li>Guarda estructuras de datos en documentos tipo JSON con un esquema dinámico (BSON).</li>
+<li>Desarrollado en el 2007 por la empresa 10gen.</li>
+<li>En el 2011 se garantiza su uso en producción.</li>
+</ul></section>
             
           </div>
           <div class="presenter_notes">
@@ -130,7 +143,173 @@
             </aside>
             
             <aside class="page_number">
-              3/3
+              3/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: README.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-4">
+          <div class="inner">
+            
+            <header><h1>Caracteristicas</h1></header>
+            
+            
+            <section><ul>
+<li>Almacenamiento orientado a documentos (document-oriented en inglés).</li>
+<li>Replicación y Alta Disponibilidad.</li>
+<li>Soporte de índices.</li>
+<li>Consultas, también basadas en documentos.</li>
+<li>Auto-Sharding, permitiendo escalar horizontalmente.</li>
+<li>GridFS, que permite almacenar ficheros de cualquier tamaño sin necesidad de complicar el entorno.</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="README.md">README.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: README.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-5">
+          <div class="inner">
+            
+            <header><h1>Tipos de datos que soporta</h1></header>
+            
+            
+            <section><h2>En JSON hay 6:</h2>
+<ul>
+<li>Number</li>
+<li>String</li>
+<li>Boolean (true o false)</li>
+<li>Array</li>
+<li>Object</li>
+<li>null</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="README.md">README.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: README.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-6">
+          <div class="inner">
+            
+            <header><h1>Se aplica en:</h1></header>
+            
+            
+            <section><ul>
+<li>Para  almacenar grandes cantidades de datos.</li>
+<li>
+<p>Aplicalicaciones con estructura compleja:</p>
+<ul>
+<li>Blog</li>
+<li>Comentarios</li>
+<li>Logs</li>
+<li>Otros</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="README.md">README.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/7
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: README.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-7">
+          <div class="inner">
+            
+            <header><h1>Instalar en Debian</h1></header>
+            
+            
+            <section><p>Inportamos las llaves</p>
+<ul>
+<li>sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10</li>
+</ul>
+<p>Creamos el archivo fuente</p>
+<ul>
+<li>echo ‘deb http://downloads-distro.mongodb.org/repo/debian-sysvinit dist 10gen’ | sudo tee /etc/apt/sources.list.d/mongodb.list</li>
+</ul>
+<p>Actualizamos</p>
+<ul>
+<li>sudo apt-get update</li>
+</ul>
+<p>Instalamos
+Plataforma de 32bits</p>
+<ul>
+<li>sudo apt-get install mongodb-10gen</li>
+</ul>
+<p>Plataforma de 64bits</p>
+<ul>
+<li>sudo apt-get install -o apt::architecture=amd64 mongodb-10gen</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="README.md">README.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/7
             </aside>
           </footer>
         </div>
@@ -151,14 +330,38 @@
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Primera Presentacion</a></th>
+        <th><a href="#slide2">NoSQl</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Segunda Presentación</a></th>
+        <th><a href="#slide3">MongoDB</a></th>
         <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Caracteristicas</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Tipos de datos que soporta</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Se aplica en:</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Instalar en Debian</a></th>
+        <td><a href="#slide7">7</a></td>
       </tr>
       
       

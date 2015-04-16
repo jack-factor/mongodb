@@ -1,10 +1,19 @@
 #MongoDB
 
-##Data base NoSql
 
+---
+#Agenda
 
-Jack Moreno B.
-
+ * MongoDB
+ * Desarrollo
+    * Operaciones Básicas
+    * Modelado de Datos
+    * Índices
+    * Busquedas Avanzadas
+ * Producción
+    * Seguridad
+    * Respaldo y restauración
+    * Replicación
 
 ---
 #NoSQl
@@ -36,8 +45,6 @@ Jack Moreno B.
 ---
 #Tipos de datos que soporta
 
-##En JSON hay 6:
-
 * Number
 * String
 * Boolean (true o false)
@@ -58,8 +65,10 @@ Jack Moreno B.
 
 
 ---
-#Instalación en Debian
+#Instalación
 
+---
+# Sistemas basados en Debian
 
 Inportamos las llaves
 
@@ -73,12 +82,49 @@ Actualizamos
 
 * sudo apt-get update
 
-Instalamos
-Plataforma de 32bits
+Instalación:
+* Plataforma de 32bits
 
-* sudo apt-get install mongodb-10gen
+    * sudo apt-get install mongodb-10gen
 
-Plataforma de 64bits
+* Plataforma de 64bits
 
-* sudo apt-get install -o apt::architecture=amd64 mongodb-10gen
+    * sudo apt-get install -o apt::architecture=amd64 mongodb-10gen
 
+---
+# Sistemas basados en Windows
+
+* Recomendaciones:
+    * A partir de la versión 2.2, MongoDB deja de ser  compatible con Windows XP.
+    Para window server 2008 y w7 se debe de instalar una actualización.
+* Instalación:
+    * Descargar la versión adecuada para nuestra S.O.
+    * Crear una carpeta llamada *mongodb* en *C:* y colocamos el contenido de lo descargado.
+    * Crear una carpeta llamada *data* en *C:*.
+    * Crear una carpeta llamada *log* en *C:/mongodb*.
+    * Para que funcione como servicio tenemos que ejecutar:
+        * echo logpath=C:\mongodb\log\mongo.log > C:\mongodb\mongod.cfg
+    * Instalar el servicio
+        * C:\mongodb\bin\mongod.exe --config C:\mongodb\mongod.cfg --install
+    * Gestionar el servicio MongoDB
+        *  net [ start | stop ] MongoDB
+
+
+---
+# Configuración
+
+* Sistemas Linux
+    * /etc/mongodb.conf
+
+* Sistemas Windows
+    * C:\mongodb\mongod.cfg
+
+
+---
+#Consola
+
+* Sistemas Linux
+    * Escribir en la consola *mongo*
+
+* Sistemas Windows
+    * ejecutar  C:\mongodb\bin\mongo.exe

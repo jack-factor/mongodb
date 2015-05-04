@@ -128,3 +128,31 @@ Instalación:
 
 * Sistemas Windows
     * ejecutar  C:\mongodb\bin\mongo.exe
+
+
+---
+#Iniciando Mongo
+
+![(alt)](images/operaciones_basicas_01.png)
+
+
+---
+#Operaciones Básicas
+
+
+---
+
+![(alt)](images/operaciones_basicas_02.png)
+
+---
+###Operaciones Básicas
+
+![(alt)](images/operaciones_basicas_03.png)
+
+---
+###Operaciones Básicas
+
+![(alt)](images/operaciones_basicas_04.png)
+
+---
+

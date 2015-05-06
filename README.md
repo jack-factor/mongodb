@@ -155,4 +155,69 @@ Instalación:
 ![(alt)](images/operaciones_basicas_04.png)
 
 ---
+###Operaciones Básicas
+
+![(alt)](images/operaciones_basicas_07.png)
+
+---
+#Operadores de MOdificación
+
+---
+###Operadores de Modificación
+
+$set : permite especificar los campos en el documento.
+
+$inc: permite adicionar sobre el campo del tipo entero en un campo.
+
+$rename : permite reescribir el campo.
+
+$unset : permite eliminar un campo.
+
+---
+## Operador de Modificación: $set
+
+![(alt)](images/operaciones_modificacion_01.png)
+
+---
+## Operador de Modificación: $inc
+
+![(alt)](images/operaciones_modificacion_02.png)
+
+---
+## Operador de Modificación: $rename
+
+![(alt)](images/operaciones_modificacion_03.png)
+
+---
+## Operador de Modificación: $unset
+
+![(alt)](images/operaciones_modificacion_04.png)
+
+---
+#Operadores de Modificación
+
+##Operadores referentes a arreglos
+
+$pop - elimina el primer o último valor de un arreglo.
+
+$pull - elimina los valores de un arreglo que cumplan con el filtro indicado.
+
+$pullAll - elimina los valores especificados de un arreglo.
+
+$push - agrega un elemento a un arreglo.
+
+$addToSet - agrega elementos a un arreglo solo sí estos no existen ya.
+
+$each 
+
+---
+#Modelado de Base de Datos
+
+##Patrones de Modelado
+####    Principalente dos:
+    * Embeber
+    * Referenciar
+
+---
+#Indexación
 

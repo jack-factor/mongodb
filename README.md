@@ -253,6 +253,54 @@ $each
 ---
 #Indexación
 
+Es una estructura de datos que toma los valores de campos particulares 
+se almacena en un espacio de rápido acceso
+
+####Tipos de índice
+
+* Índice_id - el identificador principal de un registro es el índice por defecto, si no especificas uno al crear un documento el proceso de mongod le asignará uno automaticamente de tipo ObjectID.
+* Índice sencillo - definidos sobre un único campo de un documento.
+* Índice compuesto - definidos sobre varios campos de un documento, será tomado como un índice único por parte de MongoDB.
+* Índice mutillave - utilizado en casos de que el campo a indexar pertenezca a subdocumentos dentro de un arreglo del documento padre.
+* Índice geoespacial - utilizado para indexar campos que sean coordenadas de tipo GeoJSON.
+* Índice texto - al momento de escritura se encuentra fase beta y se utiliza para buscar contenidos de cadenas de caracteres en los documentos.
+* Índice tipo hash - utilizado en la estrategia de llaves de fragmento hasheadas que se lleva a cabo en los procesos de fragmentación de datos.
+
+---
+####Index Simple
+
+![(alt)](images/index_01.png)
+
+---
+####Index Simple
+![(alt)](images/index_02.png)
+
+---
+###Index Compuesto
+![(alt)](images/index_02.png)
+
+---
+
+Indices Multillave
+simple
+> db.puntuaciones.ensureIndex({ campoArray: 1 });
+arreglo
+> db.puntuaciones.ensureIndex({ campoArray.sub_campo: 1 });
+Propiedades
+unicidad : db.puntuaciones.ensureIndex({ campo : 1 }, { unique : true })
+dispersión : > db.puntuaciones.ensureIndex({ ganadas : 1 }, { sparse : true })
+eliminar indices 
+db.puntuaciones.dropIndex({ campo_que_deseo_eliminar_el_indice : 1 })
+db.puntuaciones.dropIndexes()
+
+
+####Propiedades:
+
+* Unicidad
+
+* Disperción
+
+
 ---
 #Auto-Incrementación
 

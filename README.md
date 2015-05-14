@@ -214,10 +214,65 @@ $each
 #Modelado de Base de Datos
 
 ##Patrones de Modelado
-####    Principalente dos:
-    * Embeber
-    * Referenciar
+####    Principalmente dos patrones:
+
+    * *Embeber:* Incrustar un documento dentro de otro
+
+    * *Referenciar:* replicar las funciones de las llaves foraneas
+
+---
+###Relaciones:
+####1 - 1 (base de datos relacional)
+![(alt)](images/uno_uno.jpg)
+
+---
+###Relaciones:
+####1 - 1 (Mongodb: Embeber)
+![(alt)](images/relacion_1_1.png)
+
+---
+###Relaciones:
+####1 - * (base de datos relacional)
+![(alt)](images/uno_muchos.jpg)
+
+---
+###Relaciones:
+####1 - * (MongoDB -  Embeber)
+![(alt)](images/relacion_1_*.png)
+
+---
+###Relaciones:
+####1 - * (MongoDB -  Referenciar)
+![(alt)](images/relacion_1_*_2.png)
+
+---
+###Relaciones:
+####1 - * (base de datos relacional)
+![(alt)](images/muchos_muchos.jpg)
 
 ---
 #Indexación
 
+---
+#Auto-Incrementación
+
+---
+#Búsquedas Avanzadas
+
+---
+#Seguridad
+
+---
+#Respaldo y Restauración
+
+---
+#Replicación
+
+---
+#Fragmentación
+
+---
+#Agregación
+
+---
+#Producción

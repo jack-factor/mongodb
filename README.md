@@ -13,7 +13,6 @@
  * Producción
     * Seguridad
     * Respaldo y restauración
-    * Replicación
 
 ---
 #NoSQl

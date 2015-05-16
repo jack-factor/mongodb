@@ -1,6 +1,11 @@
 #MongoDB
 
-
+---
+##Jack Moreno Barrera
+####GitHub: https://github.com/jack-factor
+####Presentacion: 
+    * https://github.com/jack-factor/mongodb/tree/gh-pages
+    * http://jack-factor.github.io/mongodb
 ---
 #Agenda
 

@@ -211,6 +211,16 @@ $addToSet - agrega elementos a un arreglo solo sí estos no existen ya.
 $each 
 
 ---
+###Ejemplo 
+
+db.autores.update(
+    { nombre: ‘Ricardo’ },
+        {
+                $push: { secciones : { $each : [‘Haskell’,’Go’,’ActionScript’] } }
+                    });
+        })
+
+---
 #Modelado de Base de Datos
 
 ##Patrones de Modelado
@@ -280,47 +290,137 @@ se almacena en un espacio de rápido acceso
 ![(alt)](images/index_02.png)
 
 ---
+##Indices Multillave
+####Simple
 
-Indices Multillave
-simple
-> db.puntuaciones.ensureIndex({ campoArray: 1 });
-arreglo
-> db.puntuaciones.ensureIndex({ campoArray.sub_campo: 1 });
-Propiedades
-unicidad : db.puntuaciones.ensureIndex({ campo : 1 }, { unique : true })
-dispersión : > db.puntuaciones.ensureIndex({ ganadas : 1 }, { sparse : true })
-eliminar indices 
-db.puntuaciones.dropIndex({ campo_que_deseo_eliminar_el_indice : 1 })
-db.puntuaciones.dropIndexes()
+db.developer.ensureIndex({ skill: 1 });
 
+####Arreglos
 
-####Propiedades:
+db.developer.ensureIndex({ skill.nombre: 1 });
 
-* Unicidad
+##Propiedades
+* unicidad :
 
-* Disperción
+db.developer.ensureIndex({ email : 1 }, { unique : true })
 
+* dispersión :
+
+db.developer.ensureIndex({ email : 1 }, { sparse : true })
+
+---
+##Eliminar indices:
+
+db.developer.dropIndex({ email : 1 })
+
+db.developer.dropIndexes()
 
 ---
 #Auto-Incrementación
 
+ db.counter.find()
+ 
+ { “id” : “skillsid”, “autoId”: 1}
+
+* Función
+
+function getNextId(name){
+     var result = db.counter.findAndModify({
+     query:{_id:name},
+     update:{$inc:{autoId:1}},
+     new: true});
+     return result.autoId;
+ }
+
+* Ejecución
+
+db.skill.insert({ id:getNextId(skillsid), name:”Phalcon”, description:”Framework PHP” })
+
 ---
 #Búsquedas Avanzadas
+
+###Tipos:
+* Coperativas:
+* Lógicas:
+* Elementales
+
+---
+##Coperativas:
+
+* $gt - mayor que X.
+* $gte - mayor o igual que  X.
+* $lt - menor que X.
+* $lte - menor o igual que X.
+* $ne - diferentes a X.
+* $in - inclusión [ X, Y, Z ... ]
+* $nin no incluir a: [ X, Y, ... ]
+
+####Ejemplos:
+
+* db.skills.find({ _id : { $gt : 1 } })
+
+* db.skills.find({ _id : { $in : [1, 2, 3] } })
+
+---
+##Lógicos
+
+*  $or
+*  $and
+*  $nor
+*  $not
+
+####Ejemplos:
+* db.skills.find({ $or : [{_id: 1}, {name: ‘Git’}] })
+
+* db.skills.find({ _id : { $not: { $gt: 2 }} })
+
+---
+##Elementales
+
+####permiten hacer comparaciones referentes a las propiedades del campo como:
+
+*  $exists
+*  $type
+
+####Ejemplos:
+db.developer.find({ apellido: { $exists: true }})
 
 ---
 #Seguridad
 
 ---
+##Autenticación
+####Primeros Pasos:
+* Ingresamos a la instancia de mongo
+    > mongo
+* Ingresamos a la base admin
+    > use admin
+* creamos nuestro nuevo usuario
+    > db.addUser(‘jack’,’123456’)
+* Ingresamos al archivo de configuración de mongo. Descomentamos la varible
+    auth = True
+* Reiniciamos los servicios de mongodb
+
+* Para loguearnos hacemos lo siguiente
+    >  db.auth(‘jack’,’123456’)
+
+---
 #Respaldo y Restauración
 
----
-#Replicación
+####Backup
 
----
-#Fragmentación
+mongodump --port 27017 --out ./dump_mydb --db mydb --host localhost --collection participante 
 
----
-#Agregación
+####restore
+
+mongorestore -db nameDB    path/backup
+
+####Migrate
+
+db.copyDatabase(‘OriginDB’,’remoteDB’,’192.168.0.100:27017’)
 
 ---
 #Producción
+
+---
+#¡Gracias Totales...!
